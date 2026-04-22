@@ -434,6 +434,62 @@ a{color:var(--ac)}
 .qso-btn{font-size:11px;padding:6px 12px;border:1px solid var(--br2);border-radius:var(--r);background:transparent;color:var(--ac);cursor:pointer;font-family:var(--mono);touch-action:manipulation;margin-top:.25rem}
 .qso-btn:active{background:var(--bg3)}
 
+/* ═══ EMISIÓN ═══ */
+.em-subtabs{display:flex;gap:6px;margin-bottom:.75rem;flex-wrap:wrap}
+.em-stab{padding:7px 14px;border:1px solid var(--br2);border-radius:var(--r);background:transparent;color:var(--tx2);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);letter-spacing:.5px;transition:all .12s;touch-action:manipulation}
+.em-stab.active{background:var(--acd);border-color:var(--acb);color:var(--ac)}
+.em-panel{display:none}.em-panel.on{display:block}
+.em-key-wrap{display:flex;justify-content:center;margin:1rem 0}
+.em-key{
+  width:150px;height:150px;border-radius:50%;
+  background:var(--bg3);border:3px solid var(--br2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;user-select:none;touch-action:none;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:var(--tx2);
+  transition:background .05s,border-color .05s,transform .05s,box-shadow .05s;
+  -webkit-tap-highlight-color:transparent;gap:6px;
+}
+.em-key.pressed{background:var(--acd);border-color:var(--ac);color:var(--ac);transform:scale(.93);box-shadow:0 0 22px var(--acb)}
+.em-key-icon{font-size:32px;line-height:1}
+.em-tape{background:var(--bg);border:1px solid var(--br);border-radius:var(--r);min-height:46px;padding:8px 12px;font-family:var(--mono);font-size:20px;letter-spacing:5px;color:var(--ac);word-break:break-all;line-height:1.5;margin-bottom:.6rem}
+.em-cursor{display:inline-block;width:2px;height:20px;background:var(--ac);vertical-align:middle;margin-left:2px;animation:blink .8s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.em-decode{background:var(--bg2);border:1px solid var(--br);border-radius:var(--r);padding:10px 14px;font-family:var(--mono);font-size:26px;color:var(--ok);letter-spacing:4px;min-height:50px;margin-bottom:.6rem;word-break:break-all;line-height:1.4}
+.em-target{background:var(--bg2);border:1px solid var(--acb);border-radius:var(--r);padding:10px 14px;font-family:var(--mono);font-size:22px;color:var(--tx2);letter-spacing:4px;min-height:50px;margin-bottom:.6rem;word-break:break-all;line-height:1.4}
+.em-target .hit{color:var(--ok)}.em-target .miss{color:var(--er);text-decoration:underline}
+.em-osc{height:44px;background:var(--bg);border:1px solid var(--br);border-radius:var(--r);display:flex;align-items:flex-end;gap:2px;padding:4px 8px;overflow:hidden;margin-bottom:.6rem}
+.em-pulse{width:7px;border-radius:2px;background:var(--ac);flex-shrink:0;transition:height .04s}
+.em-tm-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.6rem}
+.em-tm{background:var(--bg2);border:1px solid var(--br);border-radius:6px;padding:5px 10px;font-size:10px;font-family:var(--mono);color:var(--tx2);text-align:center;flex:1;min-width:60px}
+.em-tm strong{display:block;font-size:15px;color:var(--tx);margin-bottom:1px}
+.em-band{height:7px;background:var(--bg3);border-radius:4px;overflow:hidden;margin-bottom:.35rem}
+.em-band-fill{height:100%;border-radius:4px;transition:width .15s,background .15s}
+.em-band-fill.good{background:var(--ok)}.em-band-fill.warn{background:var(--wn)}.em-band-fill.bad{background:var(--er)}
+.em-score{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:.6rem}
+.em-pill{padding:5px 14px;border-radius:20px;font-family:var(--mono);font-size:12px;border:1px solid var(--br);background:var(--bg2);color:var(--tx2)}
+.em-pill.ok{border-color:rgba(63,185,80,.4);color:var(--ok);background:var(--okd)}
+.em-pill.er{border-color:rgba(248,81,73,.3);color:var(--er);background:var(--erd)}
+.em-kbd{font-size:11px;color:var(--tx3);font-family:var(--mono);text-align:center;margin:.3rem 0 .75rem}
+/* Selector de modo llave/paddle */
+.em-mode-row{display:flex;gap:6px;justify-content:center;margin-bottom:.75rem}
+.em-mode-btn{padding:6px 16px;border:1px solid var(--br2);border-radius:var(--r);background:transparent;color:var(--tx2);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:all .12s;touch-action:manipulation}
+.em-mode-btn.active{background:var(--acd);border-color:var(--acb);color:var(--ac)}
+.em-key-single-wrap{display:none}.em-key-single-wrap.on{display:block}
+.em-paddle-wrap{display:none}.em-paddle-wrap.on{display:flex;justify-content:center;align-items:center;gap:18px}
+.em-paddle-dit,.em-paddle-dah{
+  width:120px;height:130px;border-radius:var(--r);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;user-select:none;touch-action:none;
+  font-family:var(--mono);font-size:13px;font-weight:700;
+  transition:background .05s,border-color .05s,transform .05s,box-shadow .05s;
+  -webkit-tap-highlight-color:transparent;gap:6px;
+}
+.em-paddle-dit{background:var(--bg3);border:3px solid var(--br2);color:var(--tx2)}
+.em-paddle-dah{background:var(--bg3);border:3px solid var(--br2);color:var(--tx2)}
+.em-paddle-dit.pressed{background:var(--okd);border-color:rgba(63,185,80,.6);color:var(--ok);transform:scale(.94);box-shadow:0 0 18px rgba(63,185,80,.3)}
+.em-paddle-dah.pressed{background:var(--acd);border-color:var(--acb);color:var(--ac);transform:scale(.94);box-shadow:0 0 18px var(--acb)}
+.em-paddle-icon{font-size:28px;line-height:1}
+
 </style>
 </head>
 <body>
@@ -460,6 +516,7 @@ a{color:var(--ac)}
   <button class="nav-btn active" onclick="showSec('practica',this)">Práctica</button>
   <button class="nav-btn" onclick="showSec('escucha',this)">Escucha</button>
   <button class="nav-btn" onclick="showSec('config',this)">Config</button>
+  <button class="nav-btn" onclick="showSec('emision',this)">Emisión</button>
   <button class="nav-btn" onclick="showSec('ref',this)">Referencia</button>
   <button class="nav-btn" onclick="showSec('info',this)">Koch</button>
 </nav>
@@ -925,6 +982,190 @@ a{color:var(--ac)}
 
 </div><!-- /sec-galeria -->
 
+<!-- ══════════════════ EMISIÓN ══════════════════ -->
+<div id="sec-emision" class="sec">
+
+  <div class="em-subtabs">
+    <button class="em-stab active" onclick="emTab('libre',this)">Libre</button>
+    <button class="em-stab" onclick="emTab('ejercicio',this)">Ejercicio</button>
+    <button class="em-stab" onclick="emTab('analisis',this)">Análisis</button>
+  </div>
+
+  <!-- LIBRE -->
+  <div id="em-libre" class="em-panel on">
+    <div class="card">
+      <div class="card-title">Práctica libre de emisión</div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.6;margin-bottom:.75rem">Pulsa la llave y emite Morse. Decodificación automática en tiempo real.<br><strong style="color:var(--tx)">Teclado:</strong> Espacio o punto = llave.</p>
+      <div class="card-title" style="margin-bottom:4px">Señal emitida</div>
+      <div class="em-tape" id="er-tape"><span id="er-raw"></span><span class="em-cursor"></span></div>
+      <div class="card-title" style="margin-bottom:4px">Texto decodificado</div>
+      <div class="em-decode" id="er-dec">·</div>
+      <div class="em-osc" id="er-osc"></div>
+      <!-- Control de velocidad -->
+      <div class="cfg-row" style="margin-bottom:.5rem">
+        <label style="font-size:12px;color:var(--tx2);min-width:110px">Velocidad (WPM)</label>
+        <input type="range" id="em-wpm-sl" min="5" max="35" value="12" step="1"
+          oninput="emSetWpm(this.value)" style="flex:1;accent-color:var(--ac);height:4px">
+        <span class="cfg-val" id="em-wpm-lbl" style="min-width:50px;text-align:right;font-family:var(--mono);font-size:12px;color:var(--ac)">12 WPM</span>
+      </div>
+      <div class="em-mode-row">
+        <button class="em-mode-btn active" onclick="emSetMode('libre','straight',this)">Llave recta</button>
+        <button class="em-mode-btn" onclick="emSetMode('libre','paddle',this)">Paddle (doble)</button>
+      </div>
+      <!-- Llave recta -->
+      <div class="em-key-single-wrap on" id="em-sw-libre">
+        <div class="em-key-wrap">
+          <div class="em-key" id="em-key-libre"
+            onmousedown="emDown('libre',event)" onmouseup="emUp('libre',event)"
+            ontouchstart="emDown('libre',event)" ontouchend="emUp('libre',event)">
+            <span class="em-key-icon">⚡</span><span>LLAVE</span>
+          </div>
+        </div>
+        <div class="em-kbd">[ Espacio ] o [ . ] mantener = señal CW</div>
+      </div>
+      <!-- Paddle -->
+      <div class="em-paddle-wrap" id="em-pw-libre">
+        <div class="em-paddle-dit" id="em-pd-libre"
+          onmousedown="emPaddleDown('libre','dit',event)" onmouseup="emPaddleUp('libre','dit',event)"
+          ontouchstart="emPaddleDown('libre','dit',event)" ontouchend="emPaddleUp('libre','dit',event)">
+          <span class="em-paddle-icon">·</span><span>DIT</span>
+        </div>
+        <div class="em-paddle-dah" id="em-pa-libre"
+          onmousedown="emPaddleDown('libre','dah',event)" onmouseup="emPaddleUp('libre','dah',event)"
+          ontouchstart="emPaddleDown('libre','dah',event)" ontouchend="emPaddleUp('libre','dah',event)">
+          <span class="em-paddle-icon">—</span><span>DAH</span>
+        </div>
+      </div>
+      <div class="em-kbd" id="em-kbdh-libre">[ Espacio ] o [ . ] mantener = señal CW</div>
+      <div class="em-tm-row">
+        <div class="em-tm"><strong id="er-dit">—</strong>Dit ms</div>
+        <div class="em-tm"><strong id="er-dah">—</strong>Dah ms</div>
+        <div class="em-tm"><strong id="er-wpm">—</strong>WPM</div>
+        <div class="em-tm"><strong id="er-chars">0</strong>Letras</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-er" onclick="emClearPanel('libre')">⊘ Borrar</button>
+        <button class="btn" onclick="emReproduce('libre')">▶ Reproducir</button>
+        <button class="btn btn-ac" onclick="emCopiar('libre')">📋 Copiar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO -->
+  <div id="em-ejercicio" class="em-panel">
+    <div class="card">
+      <div class="card-title">Ejercicio guiado</div>
+      <div class="btn-row" style="flex-wrap:wrap">
+        <button class="btn btn-ac" onclick="emNuevoEj('letra')">Letra</button>
+        <button class="btn" onclick="emNuevoEj('word')">Palabra CW</button>
+        <button class="btn" onclick="emNuevoEj('qso')">Frase QSO</button>
+        <button class="btn" onclick="emNuevoEj('custom')">✏ Propia</button>
+      </div>
+      <div id="em-custom-row" style="display:none;margin-bottom:.6rem">
+        <input type="text" id="em-custom-txt"
+          style="width:100%;background:var(--bg);border:1.5px solid var(--br2);border-radius:var(--r);padding:10px 12px;font-family:var(--mono);font-size:16px;color:var(--ac);outline:none;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px"
+          placeholder="ESCRIBE AQUÍ…" autocomplete="off" autocorrect="off" spellcheck="false"
+          oninput="this.value=this.value.toUpperCase()">
+        <button class="btn btn-ac btn-full" onclick="emUsarCustom()">Usar este texto →</button>
+      </div>
+      <div class="card-title" style="margin-bottom:4px">Texto a emitir</div>
+      <div class="em-target" id="ej-target">— elige un ejercicio —</div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--tx3);letter-spacing:2px;margin-bottom:.6rem;word-break:break-all" id="ej-morse"></div>
+      <div class="card-title" style="margin-bottom:4px">Tu emisión (decodificada)</div>
+      <div class="em-decode" id="ej-dec">·</div>
+      <div class="em-tape" style="font-size:16px;letter-spacing:3px;min-height:38px"><span id="ej-raw"></span><span class="em-cursor"></span></div>
+      <div class="em-osc" id="ej-osc"></div>
+      <!-- Selector de modo -->
+      <div class="em-mode-row">
+        <button class="em-mode-btn active" onclick="emSetMode('ej','straight',this)">Llave recta</button>
+        <button class="em-mode-btn" onclick="emSetMode('ej','paddle',this)">Paddle (doble)</button>
+      </div>
+      <!-- Llave recta -->
+      <div class="em-key-single-wrap on" id="em-sw-ej">
+        <div class="em-key-wrap">
+          <div class="em-key" id="em-key-ej"
+            onmousedown="emDown('ej',event)" onmouseup="emUp('ej',event)"
+            ontouchstart="emDown('ej',event)" ontouchend="emUp('ej',event)">
+            <span class="em-key-icon">⚡</span><span>LLAVE</span>
+          </div>
+        </div>
+      </div>
+      <!-- Paddle -->
+      <div class="em-paddle-wrap" id="em-pw-ej">
+        <div class="em-paddle-dit" id="em-pd-ej"
+          onmousedown="emPaddleDown('ej','dit',event)" onmouseup="emPaddleUp('ej','dit',event)"
+          ontouchstart="emPaddleDown('ej','dit',event)" ontouchend="emPaddleUp('ej','dit',event)">
+          <span class="em-paddle-icon">·</span><span>DIT</span>
+        </div>
+        <div class="em-paddle-dah" id="em-pa-ej"
+          onmousedown="emPaddleDown('ej','dah',event)" onmouseup="emPaddleUp('ej','dah',event)"
+          ontouchstart="emPaddleDown('ej','dah',event)" ontouchend="emPaddleUp('ej','dah',event)">
+          <span class="em-paddle-icon">—</span><span>DAH</span>
+        </div>
+      </div>
+      <div class="em-kbd" id="em-kbdh-ej">[ Espacio ] o [ . ] = llave</div>
+      <div class="em-score" id="ej-score"><span class="em-pill">Emite el texto y pulsa Verificar</span></div>
+      <div class="btn-row">
+        <button class="btn btn-er" onclick="emClearPanel('ej')">⊘ Borrar</button>
+        <button class="btn btn-ok" onclick="emVerificar()">✓ Verificar</button>
+        <button class="btn" onclick="emEscucharTarget()">▶ Escuchar objetivo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANÁLISIS -->
+  <div id="em-analisis" class="em-panel">
+    <div class="card">
+      <div class="card-title">Analizador de temporización</div>
+      <p style="font-size:12px;color:var(--tx2);line-height:1.6;margin-bottom:.75rem">Emite Morse y compara tus tiempos contra los ideales. Verde = ±40%, amarillo = ±70%, rojo = fuera de rango.</p>
+      <!-- Selector de modo -->
+      <div class="em-mode-row">
+        <button class="em-mode-btn active" onclick="emSetMode('tm','straight',this)">Llave recta</button>
+        <button class="em-mode-btn" onclick="emSetMode('tm','paddle',this)">Paddle (doble)</button>
+      </div>
+      <!-- Llave recta -->
+      <div class="em-key-single-wrap on" id="em-sw-tm">
+        <div class="em-key-wrap">
+          <div class="em-key" id="em-key-tm"
+            onmousedown="emDown('tm',event)" onmouseup="emUp('tm',event)"
+            ontouchstart="emDown('tm',event)" ontouchend="emUp('tm',event)">
+            <span class="em-key-icon">⚡</span><span>LLAVE</span>
+          </div>
+        </div>
+      </div>
+      <!-- Paddle -->
+      <div class="em-paddle-wrap" id="em-pw-tm">
+        <div class="em-paddle-dit" id="em-pd-tm"
+          onmousedown="emPaddleDown('tm','dit',event)" onmouseup="emPaddleUp('tm','dit',event)"
+          ontouchstart="emPaddleDown('tm','dit',event)" ontouchend="emPaddleUp('tm','dit',event)">
+          <span class="em-paddle-icon">·</span><span>DIT</span>
+        </div>
+        <div class="em-paddle-dah" id="em-pa-tm"
+          onmousedown="emPaddleDown('tm','dah',event)" onmouseup="emPaddleUp('tm','dah',event)"
+          ontouchstart="emPaddleDown('tm','dah',event)" ontouchend="emPaddleUp('tm','dah',event)">
+          <span class="em-paddle-icon">—</span><span>DAH</span>
+        </div>
+      </div>
+      <div class="em-kbd" id="em-kbdh-tm">[ Espacio ] o [ . ] = llave</div>
+      <div id="tm-bars" style="margin-top:.5rem">
+        <div style="font-size:11px;color:var(--tx3);font-family:var(--mono);text-align:center">Emite algo para ver el análisis…</div>
+      </div>
+      <div style="margin-top:.75rem">
+        <div class="card-title" style="margin-bottom:4px">Últimos elementos</div>
+        <div id="tm-log" style="font-family:var(--mono);font-size:12px;color:var(--tx2);line-height:2;word-break:break-all">—</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--br);border-radius:var(--r);padding:.75rem;margin-top:.75rem">
+        <div class="card-title" style="margin-bottom:6px">Tiempos ideales · <span id="tm-wpm-lbl">—</span> WPM</div>
+        <div id="tm-ideal" style="font-family:var(--mono);font-size:12px;color:var(--tx2);line-height:2"></div>
+      </div>
+      <div class="btn-row" style="margin-top:.6rem">
+        <button class="btn btn-er" onclick="emClearPanel('tm')">⊘ Limpiar análisis</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /sec-emision -->
+
 </div><!-- /wrap -->
 
 <div class="toast" id="toast"></div>
@@ -1123,6 +1364,7 @@ function showSec(s,btn){
   if(s==='ref'){buildRefGrid();buildMorseTables();buildQCodes()}
   if(s==='escucha')slCfg()
   if(s==='galeria')buildAbrevTable()
+  if(s==='emision')emInitPanel()
   if(s!=='escucha'&&sl.running)slStop()
 }
 
@@ -1502,6 +1744,435 @@ function buildGMorseTables(){
   ]
   punct.forEach(([c,code,lbl])=>pG.appendChild(cell(c,code,lbl)))
 }
+
+// ══════════════════════════════════════════════════════
+//  EMISIÓN — PRÁCTICA DE ENVÍO CW
+// ══════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════
+//  EMISIÓN — llave recta + paddle iambic
+// ══════════════════════════════════════════════════════
+
+// ── Tabla inversa Morse ───────────────────────────────
+var MINV = {};
+Object.keys(MORSE).forEach(function(k){ MINV[MORSE[k]] = k; });
+
+// ── Estado por panel ─────────────────────────────────
+var emPS = {
+  libre:{raw:'',decoded:'',downAt:0,els:[],dits:[],dahs:[],chars:0,down:false,ct:null,wt:null},
+  ej:   {raw:'',decoded:'',downAt:0,els:[],dits:[],dahs:[],chars:0,down:false,ct:null,wt:null},
+  tm:   {raw:'',decoded:'',downAt:0,els:[],dits:[],dahs:[],chars:0,down:false,ct:null,wt:null}
+};
+
+// ── Velocidad y modo ──────────────────────────────────
+var emWpm = 12;
+var emMode = {libre:'straight', ej:'straight', tm:'straight'};
+var emCurPanel = 'libre';
+var emTargetText = '';
+
+// ── Audio de llave recta ──────────────────────────────
+var _emOscNode = null, _emGainNode = null;
+
+function emDit(){ return 1200 / emWpm; }
+
+function emToneOn(){
+  try{
+    var a = getAC();
+    if(_emGainNode){ try{ _emGainNode.disconnect(); }catch(x){} }
+    var o = a.createOscillator(), g = a.createGain();
+    o.connect(g); g.connect(a.destination);
+    o.frequency.value = cfg.tone;
+    g.gain.setValueAtTime(0, a.currentTime);
+    g.gain.linearRampToValueAtTime(cfg.vol, a.currentTime + 0.007);
+    o.start(); _emOscNode = o; _emGainNode = g;
+  }catch(x){ console.error('emToneOn', x); }
+}
+function emToneOff(){
+  try{
+    if(_emOscNode && _emGainNode){
+      var a = getAC();
+      _emGainNode.gain.setValueAtTime(cfg.vol, a.currentTime);
+      _emGainNode.gain.linearRampToValueAtTime(0, a.currentTime + 0.007);
+      var o = _emOscNode; _emOscNode = null; _emGainNode = null;
+      setTimeout(function(){ try{ o.stop(); }catch(x){} }, 25);
+    }
+  }catch(x){}
+}
+
+// ── Tono puntual (para paddle) ────────────────────────
+function emPlayTone(durMs){
+  try{
+    var a = getAC();
+    var t = a.currentTime;
+    var d = durMs / 1000;
+    var o = a.createOscillator(), g = a.createGain();
+    o.connect(g); g.connect(a.destination);
+    o.frequency.value = cfg.tone;
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(cfg.vol, t + 0.005);
+    g.gain.setValueAtTime(cfg.vol, t + d - 0.005);
+    g.gain.linearRampToValueAtTime(0, t + d);
+    o.start(t); o.stop(t + d + 0.015);
+  }catch(e){ console.error('emPlayTone', e); }
+}
+
+// ── UI helpers ────────────────────────────────────────
+function emOscAdd(panel, isOn){
+  var ids = {libre:'er-osc', ej:'ej-osc', tm:null};
+  var id = ids[panel]; if(!id) return;
+  var cont = document.getElementById(id); if(!cont) return;
+  var bar = document.createElement('div'); bar.className = 'em-pulse';
+  bar.style.height = isOn ? '36px' : '6px';
+  bar.style.background = isOn ? 'var(--ac)' : 'var(--br2)';
+  cont.appendChild(bar);
+  while(cont.children.length > 52) cont.removeChild(cont.firstChild);
+}
+
+function emRefreshRaw(panel){
+  var ids = {libre:'er-raw', ej:'ej-raw', tm:null};
+  var id = ids[panel]; if(!id) return;
+  var el = document.getElementById(id);
+  if(el) el.textContent = emPS[panel].raw;
+}
+function emRefreshDecoded(panel){
+  var ids = {libre:'er-dec', ej:'ej-dec', tm:null};
+  var id = ids[panel]; if(!id) return;
+  var el = document.getElementById(id);
+  if(el) el.textContent = emPS[panel].decoded || '·';
+}
+function emRefreshStats(panel){
+  if(panel !== 'libre') return;
+  var s = emPS.libre;
+  var avgDit = s.dits.length ? Math.round(s.dits.reduce(function(a,b){return a+b;}) / s.dits.length) : null;
+  var avgDah = s.dahs.length ? Math.round(s.dahs.reduce(function(a,b){return a+b;}) / s.dahs.length) : null;
+  var wpm = avgDit ? Math.round(1200 / avgDit) : null;
+  function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
+  set('er-dit', avgDit ? avgDit+'ms' : '—');
+  set('er-dah', avgDah ? avgDah+'ms' : '—');
+  set('er-wpm', wpm || '—');
+  set('er-chars', s.chars);
+}
+function emRefreshAnalysis(panel){
+  if(panel !== 'tm') return;
+  var dit = emDit(), dah = dit*3;
+  function set(id,v){ var e=document.getElementById(id); if(e) e.innerHTML=v; }
+  set('tm-wpm-lbl', emWpm);
+  set('tm-ideal',
+    'Dit: <strong style="color:var(--ac)">'+Math.round(dit)+'ms</strong><br>'+
+    'Dah: <strong style="color:var(--ac)">'+Math.round(dah)+'ms</strong><br>'+
+    'Pausa elementos: <strong style="color:var(--ac)">'+Math.round(dit)+'ms</strong><br>'+
+    'Pausa letras: <strong style="color:var(--ac)">'+Math.round(dit*3)+'ms</strong><br>'+
+    'Pausa palabras: <strong style="color:var(--ac)">'+Math.round(dit*7)+'ms</strong>');
+}
+
+// Decodificar carácter acumulado en raw
+function emDecodeChar(panel){
+  var s = emPS[panel];
+  var m = s.raw.trim();
+  if(!m) return;
+  var ch = MINV[m] || '?';
+  s.decoded += ch; s.chars++; s.raw = '';
+  emRefreshDecoded(panel);
+  emRefreshRaw(panel);
+  emRefreshStats(panel);
+  clearTimeout(s.wt);
+  s.wt = setTimeout(function(){
+    if(s.decoded.slice(-1) !== ' '){ s.decoded += ' '; emRefreshDecoded(panel); }
+  }, emDit() * 4);
+}
+
+// ── LLAVE RECTA ───────────────────────────────────────
+window.emDown = function(panel, ev){
+  if(ev && ev.preventDefault) ev.preventDefault();
+  var s = emPS[panel]; if(s.down) return;
+  s.down = true; s.downAt = Date.now();
+  clearTimeout(s.ct); clearTimeout(s.wt);
+  emToneOn();
+  var k = document.getElementById('em-key-'+panel);
+  if(k) k.classList.add('pressed');
+  emOscAdd(panel, true);
+};
+
+window.emUp = function(panel, ev){
+  if(ev && ev.preventDefault) ev.preventDefault();
+  var s = emPS[panel]; if(!s.down) return;
+  s.down = false;
+  var dur = Date.now() - s.downAt;
+  emToneOff();
+  var k = document.getElementById('em-key-'+panel);
+  if(k) k.classList.remove('pressed');
+  emOscAdd(panel, false);
+
+  var dit = emDit();
+  var sym = dur < dit*2 ? '.' : '-';
+  s.raw += sym;
+  s.els.push({sym:sym, dur:dur});
+  if(sym==='.') s.dits.push(dur); else s.dahs.push(dur);
+  emRefreshRaw(panel);
+  emRefreshStats(panel);
+  emRefreshAnalysis(panel);
+
+  clearTimeout(s.ct);
+  s.ct = setTimeout(function(){
+    emDecodeChar(panel);
+  }, dit * 2.5);
+};
+
+// ── PADDLE IAMBIC ─────────────────────────────────────
+var PDL = {
+  libre:{d:false,h:false,last:null,on:false},
+  ej:   {d:false,h:false,last:null,on:false},
+  tm:   {d:false,h:false,last:null,on:false}
+};
+
+function pdStep(panel){
+  var p = PDL[panel];
+  var dit = emDit();
+
+  var sym = null;
+  if(p.d && p.h){
+    sym = (p.last === '-') ? '.' : '-';
+  } else if(p.d){
+    sym = '.';
+  } else if(p.h){
+    sym = '-';
+  }
+
+  if(!sym){
+    p.on = false;
+    emDecodeChar(panel);
+    return;
+  }
+
+  p.on = true;
+  p.last = sym;
+  var durMs = (sym === '.') ? dit : dit * 3;
+
+  emPlayTone(durMs);
+  emOscAdd(panel, true);
+
+  var s = emPS[panel];
+  s.raw += sym;
+  s.els.push({sym:sym, dur:durMs});
+  if(sym==='.') s.dits.push(durMs); else s.dahs.push(durMs);
+  emRefreshRaw(panel);
+  emRefreshStats(panel);
+  clearTimeout(s.ct); clearTimeout(s.wt);
+
+  setTimeout(function(){
+    emOscAdd(panel, false);
+    pdStep(panel);
+  }, durMs + dit);
+}
+
+window.emPaddleDown = function(panel, side, ev){
+  if(ev && ev.preventDefault) ev.preventDefault();
+  var p = PDL[panel];
+  if(side === 'dit') p.d = true; else p.h = true;
+  var el = document.getElementById(side==='dit' ? 'em-pd-'+panel : 'em-pa-'+panel);
+  if(el) el.classList.add('pressed');
+  if(!p.on) pdStep(panel);
+};
+
+window.emPaddleUp = function(panel, side, ev){
+  if(ev && ev.preventDefault) ev.preventDefault();
+  var p = PDL[panel];
+  if(side === 'dit') p.d = false; else p.h = false;
+  var el = document.getElementById(side==='dit' ? 'em-pd-'+panel : 'em-pa-'+panel);
+  if(el) el.classList.remove('pressed');
+};
+
+// ── CONTROL DE VELOCIDAD ─────────────────────────────
+window.emSetWpm = function(v){
+  emWpm = +v;
+  var lbl = document.getElementById('em-wpm-lbl');
+  if(lbl) lbl.textContent = v + ' WPM';
+  emRefreshAnalysis('tm');
+};
+
+// ── SELECTOR DE MODO ─────────────────────────────────
+window.emSetMode = function(panel, mode, btn){
+  emMode[panel] = mode;
+  var row = btn.closest('.em-mode-row');
+  row.querySelectorAll('.em-mode-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  var sw  = document.getElementById('em-sw-'+panel);
+  var pw  = document.getElementById('em-pw-'+panel);
+  var kbh = document.getElementById('em-kbdh-'+panel);
+  if(mode === 'straight'){
+    if(sw) sw.classList.add('on');
+    if(pw) pw.classList.remove('on');
+    if(kbh) kbh.textContent = '[ Espacio ] o [ . ] mantener = señal CW';
+  } else {
+    if(sw) sw.classList.remove('on');
+    if(pw) pw.classList.add('on');
+    if(kbh) kbh.textContent = 'DIT = [ Z ]   DAH = [ X ]   (teclado)';
+  }
+};
+
+// ── TABS ─────────────────────────────────────────────
+window.emTab = function(name, btn){
+  document.querySelectorAll('.em-panel').forEach(function(p){ p.classList.remove('on'); });
+  document.querySelectorAll('.em-stab').forEach(function(b){ b.classList.remove('active'); });
+  var panel = document.getElementById('em-'+name);
+  if(panel) panel.classList.add('on');
+  btn.classList.add('active');
+  emCurPanel = name === 'ejercicio' ? 'ej' : name === 'analisis' ? 'tm' : 'libre';
+  if(name === 'analisis') emRefreshAnalysis('tm');
+};
+
+// ── LIMPIAR ───────────────────────────────────────────
+window.emClearPanel = function(panel){
+  var s = emPS[panel];
+  s.raw=''; s.decoded=''; s.els=[]; s.dits=[]; s.dahs=[]; s.chars=0;
+  clearTimeout(s.ct); clearTimeout(s.wt);
+  var maps = {
+    libre:{raw:'er-raw', dec:'er-dec', osc:'er-osc'},
+    ej:   {raw:'ej-raw', dec:'ej-dec', osc:'ej-osc'},
+    tm:   {}
+  };
+  var m = maps[panel];
+  if(m.raw){ var e=document.getElementById(m.raw); if(e) e.textContent=''; }
+  if(m.dec){ var e=document.getElementById(m.dec); if(e) e.textContent='·'; }
+  if(m.osc){ var e=document.getElementById(m.osc); if(e) e.innerHTML=''; }
+  if(panel==='libre') emRefreshStats('libre');
+  if(panel==='ej'){
+    var sc=document.getElementById('ej-score');
+    if(sc) sc.innerHTML='<span class="em-pill">Emite el texto y pulsa Verificar</span>';
+  }
+  if(panel==='tm'){
+    var b=document.getElementById('tm-bars');
+    if(b) b.innerHTML='<div style="font-size:11px;color:var(--tx3);font-family:var(--mono);text-align:center">Emite algo para ver el análisis…</div>';
+    var l=document.getElementById('tm-log'); if(l) l.textContent='—';
+  }
+};
+
+// ── REPRODUCIR / COPIAR ───────────────────────────────
+window.emReproduce = function(panel){
+  var t = (emPS[panel].decoded || '').trim();
+  if(!t){ toast('Nada que reproducir'); return; }
+  emPlayText(t);
+};
+window.emCopiar = function(panel){
+  var t = (emPS[panel].decoded || '').trim();
+  if(!t){ toast('Nada que copiar'); return; }
+  try{ navigator.clipboard.writeText(t).then(function(){ toast('Copiado: '+t); }); }
+  catch(x){ toast(t); }
+};
+function emPlayText(txt){
+  if(state.playing) return;
+  state.playing = true;
+  var m = '';
+  txt.toUpperCase().split('').forEach(function(c, i, a){
+    if(c===' ') m += '   ';
+    else if(MORSE[c]){ if(i>0 && a[i-1]!==' ') m += ' '; m += MORSE[c]; }
+  });
+  playMorse(m, function(){ state.playing = false; });
+}
+
+// ── EJERCICIO ─────────────────────────────────────────
+var EJ_WORDS  = ['CQ','DE','RST','QSO','QTH','73','88','ES','PSE','TKS','OM','YL','FB','AR','SK','BK','KN','QRL','QRP','WX','RIG','ANT','HI','NR','HR'];
+var EJ_FRASES = ['CQ CQ DE XE1ABC K','UR RST 599 73','TKS OM 73 ES 88 SK','QTH MEXICO QRP','PSE QRS QRM BK','FB QSO 73 DE XE1ROR SK'];
+
+window.emNuevoEj = function(tipo){
+  var row = document.getElementById('em-custom-row');
+  if(tipo==='custom'){ row.style.display='block'; return; }
+  row.style.display = 'none';
+  var t = '';
+  if(tipo==='letra'){
+    var pool = KOCH.slice(0, state.lesson);
+    t = pool[Math.floor(Math.random()*pool.length)];
+  } else if(tipo==='word'){
+    t = EJ_WORDS[Math.floor(Math.random()*EJ_WORDS.length)];
+  } else if(tipo==='qso'){
+    t = EJ_FRASES[Math.floor(Math.random()*EJ_FRASES.length)];
+  }
+  emPonerTarget(t);
+};
+window.emUsarCustom = function(){
+  var v = (document.getElementById('em-custom-txt').value || '').trim().toUpperCase();
+  if(!v) return;
+  document.getElementById('em-custom-row').style.display = 'none';
+  emPonerTarget(v);
+};
+function emPonerTarget(t){
+  emTargetText = t;
+  window.emClearPanel('ej');
+  var d = document.getElementById('ej-target'); if(d) d.textContent = t;
+  var mc = document.getElementById('ej-morse');
+  if(mc) mc.textContent = t.split('').map(function(c){ return c===' '?'/':(MORSE[c]||'?'); }).join(' · ');
+}
+window.emVerificar = function(){
+  var typed = (emPS.ej.decoded || '').trim().replace(/\s+/g,' ');
+  var target = emTargetText.trim().replace(/\s+/g,' ');
+  if(!target){ toast('Elige un ejercicio primero'); return; }
+  if(!typed){ toast('Emite algo primero'); return; }
+  var hits = 0;
+  var d = document.getElementById('ej-target'); if(!d) return;
+  d.innerHTML = '';
+  for(var i=0; i<target.length; i++){
+    var tc=target[i], uc=typed[i]||'';
+    if(tc===uc) hits++;
+    var sp = document.createElement('span');
+    sp.textContent = tc;
+    sp.className = uc ? (tc===uc?'hit':'miss') : '';
+    d.appendChild(sp);
+  }
+  var pct = Math.round(hits/target.length*100);
+  var sc = document.getElementById('ej-score');
+  if(sc) sc.innerHTML =
+    '<span class="em-pill '+(pct>=80?'ok':'er')+'">Precisión: '+pct+'%</span>'+
+    '<span class="em-pill">'+hits+'/'+target.length+' correctas</span>'+
+    (pct>=90?'<span class="em-pill ok">✓ ¡Excelente!</span>':
+     pct>=70?'<span class="em-pill">Sigue practicando</span>':
+             '<span class="em-pill er">Repite el ejercicio</span>');
+};
+window.emEscucharTarget = function(){
+  if(!emTargetText){ toast('Elige un ejercicio primero'); return; }
+  emPlayText(emTargetText);
+};
+
+// ── INIT AL ENTRAR ────────────────────────────────────
+window.emInitPanel = function(){
+  emCurPanel = 'libre';
+  var sl = document.getElementById('em-wpm-sl');
+  var lbl = document.getElementById('em-wpm-lbl');
+  if(sl)  sl.value = emWpm;
+  if(lbl) lbl.textContent = emWpm + ' WPM';
+  emRefreshAnalysis('tm');
+};
+
+// ── TECLADO ───────────────────────────────────────────
+document.addEventListener('keydown', function(e){
+  var sec = document.querySelector('.sec.on');
+  if(!sec || sec.id !== 'sec-emision') return;
+  var mode = emMode[emCurPanel] || 'straight';
+  if(mode === 'straight'){
+    if(e.key !== ' ' && e.key !== '.') return;
+    e.preventDefault();
+    if(!emPS[emCurPanel].down) window.emDown(emCurPanel, {preventDefault:function(){}});
+  } else {
+    if(e.key==='z'||e.key==='Z'){ e.preventDefault(); if(!PDL[emCurPanel].d) window.emPaddleDown(emCurPanel,'dit',{preventDefault:function(){}}); }
+    else if(e.key==='x'||e.key==='X'){ e.preventDefault(); if(!PDL[emCurPanel].h) window.emPaddleDown(emCurPanel,'dah',{preventDefault:function(){}}); }
+  }
+});
+document.addEventListener('keyup', function(e){
+  var sec = document.querySelector('.sec.on');
+  if(!sec || sec.id !== 'sec-emision') return;
+  var mode = emMode[emCurPanel] || 'straight';
+  if(mode === 'straight'){
+    if(e.key !== ' ' && e.key !== '.') return;
+    e.preventDefault();
+    window.emUp(emCurPanel, {preventDefault:function(){}});
+  } else {
+    if(e.key==='z'||e.key==='Z'){ e.preventDefault(); window.emPaddleUp(emCurPanel,'dit',{preventDefault:function(){}}); }
+    else if(e.key==='x'||e.key==='X'){ e.preventDefault(); window.emPaddleUp(emCurPanel,'dah',{preventDefault:function(){}}); }
+  }
+});
+
+// ── FIN EMISIÓN ───────────────────────────────────────
+// ── FIN PADDLE ───────────────────────────────────────
+
 
 </script>
 
